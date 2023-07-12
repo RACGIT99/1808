@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>1810</title>
+<title>1808</title>
 <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 <base target="_blank">
 <link rel="stylesheet" type="text/css" href="./Qgis2threejs.css">
@@ -11,6 +11,7 @@
 <script src="./threejs/ViewHelper.js"></script>
 <script src="./tweenjs/tween.js"></script>
 <script src="./Qgis2threejs.js"></script>
+<script src="./meshline/THREE.MeshLine.js"></script>
 <script src="./dat-gui/dat.gui.min.js"></script>
 <script src="./dat-gui_panel.js"></script>
 </head>
@@ -27,7 +28,7 @@
   <div id="popupbody">
     <div id="popupcontent"></div>
 
-    
+   
 
     <!-- page info -->
     <div id="pageinfo">
@@ -68,8 +69,7 @@
 <div id="progress"><div id="progressbar"></div></div>
 
 <!-- header and footer -->
-<div id="header"><FONT COLOR="#400ed1"> <b> 
-<p style="background-color:acquamarine;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The animation can be re-played from the Contol menu  and layers switched off and on.>>></p> </div>
+<div id="header"></div>
 <div id="footer"></div>
 
 <!-- animation -->
@@ -96,6 +96,7 @@
 </div>
 
 <script>
+Q3D.Config.localMode = true;
 Q3D.Config.animation.enabled = true;
 Q3D.Config.animation.startOnLoad = true;
 
@@ -106,7 +107,7 @@ var container = document.getElementById("view"),
 app.init(container);    // initialize viewer
 
 // load the scene
-app.loadSceneFile("./data/index/scene.json", function (scene) {
+app.loadSceneFile("./data/index/scene.js", function (scene) {
   // scene file has been loaded
   app.start();
 
