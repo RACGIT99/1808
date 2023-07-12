@@ -96,7 +96,6 @@
 </div>
 
 <script>
-Q3D.Config.localMode = true;
 Q3D.Config.animation.enabled = true;
 Q3D.Config.animation.startOnLoad = true;
 
@@ -107,7 +106,7 @@ var container = document.getElementById("view"),
 app.init(container);    // initialize viewer
 
 // load the scene
-app.loadSceneFile("./data/index/scene.js", function (scene) {
+app.loadSceneFile("./data/index/scene.json", function (scene) {
   // scene file has been loaded
   app.start();
 
